@@ -191,7 +191,7 @@ local function showTooltip(self)
 	if( not ShadowUF.db.profile.locked ) then return end
 	if( GameTooltip:IsForbidden() ) then return end
 
-	GameTooltip:SetOwner(self, "ANCHOR_BOTTOMLEFT")
+	GameTooltip:SetOwner(UIParent, "ANCHOR_BOTTOMRIGHT")
 	if( self.filter == "TEMP" ) then
 		GameTooltip:SetInventoryItem("player", self.auraID)
 		self:SetScript("OnUpdate", nil)
