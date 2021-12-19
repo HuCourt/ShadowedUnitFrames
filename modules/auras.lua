@@ -565,7 +565,12 @@ local function renderAura(parent, frame, type, config, displayConfig, index, fil
 		button.isSelfScaled = nil
 		button:SetScale(1)
 	end
-
+	
+	-- Set clickthrough except for target and player 
+	if(frame.parent.unitType ~= "target" and frame.parent.unitType ~= "player") then
+		button:EnableMouse(false)
+	end
+	
 	-- Size it
 	button:SetHeight(config.size)
 	button:SetWidth(config.size)
